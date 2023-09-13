@@ -13,7 +13,7 @@ namespace Random_Numbers___Assignment
     internal class Program
     {
         static void Main(string[] args)
-        { // RC Sep 11 2023
+        { // RC Sep 11 2023 // Git change
 
             Random generator = new Random();
             string punctuation;
