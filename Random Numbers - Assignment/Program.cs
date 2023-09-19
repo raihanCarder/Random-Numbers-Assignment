@@ -6,6 +6,7 @@ using System.Reflection.Emit;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Random_Numbers___Assignment
@@ -14,10 +15,12 @@ namespace Random_Numbers___Assignment
     {
         static void Main(string[] args)
         { // RC Sep 11 2023 // Git change
-
+            Die die1 = new Die();
+            Thread.Sleep(1000);
+            Die die2 = new Die();
             Random generator = new Random();
             string punctuation;
-            int minimum, maximum, oldMaximum, oldMinimum, diceOne, diceTwo, round;
+            int minimum, maximum, oldMaximum, oldMinimum, round;
             double decimals, newValue, total;
 
             // Random Integers
@@ -62,13 +65,10 @@ namespace Random_Numbers___Assignment
 
             // Dice Roller
 
-            diceOne = generator.Next(1,7);
-            diceTwo = generator.Next(1, 7);
-
             Console.WriteLine("The program rolls two die.");
-            Console.WriteLine($"The first roll is: {diceOne}.");
-            Console.WriteLine($"The second roll is: {diceTwo}.");
-            Console.WriteLine($"The sum of your rolls is {diceOne+diceTwo}.");
+            Console.WriteLine($"The first roll is: {die1.Roll}.");
+            Console.WriteLine($"The second roll is: {die2.Roll}.");
+            Console.WriteLine($"The sum of your rolls is {die1.Roll+die2.Roll}.");
             Console.WriteLine();
 
             // Random decimal Numbers
